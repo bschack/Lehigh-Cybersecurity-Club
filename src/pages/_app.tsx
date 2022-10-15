@@ -1,11 +1,13 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
+import "../libs/styles/globals.module.scss";
+import { Homepage } from './homepage/homepage';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/home" element={"Home page"} />
+        <Route path="/*" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<Homepage />} />
       </Routes>
     </Router>
   );
